@@ -4,18 +4,31 @@ import 'package:flutter/material.dart';
 //启动APP APP入口是这个类
 void main() => runApp(Uitextwidgetapp());
 
-//定义声明这个APP类
+//定义声明这个APP类 继承StatelessWidget
+  //组件 要构建画布Widget build(BuildContext context){return XXXAPP样式膜拜（模版详细部署）}
 class Uitextwidgetapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Text widget',
       home: Scaffold(
-        body: Center(child: Text("hello johnson")),
-      ),
+        body: Center(
+          child: Container(
+            child:Text("this is text",
+              style: TextStyle(
+                fontSize: 40.0,
+                color: Color.fromARGB(255, 255, 0, 0),
+                decoration:TextDecoration.underline,
+                decorationStyle: TextDecorationStyle.solid),
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,)
+          ),
+        ),
+      )
     );
-  }
-}
+    }
+}  
 // import 'package:flutter/material.dart';
 
 // void main() => runApp(MyApp());
